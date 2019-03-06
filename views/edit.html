@@ -46,15 +46,7 @@
       url: "/api/put/" + pk,
       method: "PUT",
       data: $("#user-form").serialize(),
-      statusCode: {
-        '202': function() {
-	  			console.log("202 response!");
-	  		},
-        '200': function() {
-	  			console.log("200 response!");
-	  		}
-      },
-      success: function (data){
+      success: function (){
         window.location.href = "/";
       }
     });
