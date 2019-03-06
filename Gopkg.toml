@@ -1,0 +1,19 @@
+[[constraint]]
+  name = "github.com/flosch/pongo2"
+  version = "3.0.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/ikeikeikeike/pongor"
+
+[[constraint]]
+  name = "github.com/labstack/echo"
+  version = "3.3.10"
+
+[[constraint]]
+  name = "upper.io/db.v3"
+  version = "3.5.7"
+
+[prune]
+  go-tests = true
+  unused-packages = true
