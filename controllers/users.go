@@ -8,7 +8,8 @@ import (
 	"github.com/labstack/echo"
 )
 
-// Home is the homepage
+// Home function to list and render
+//  Render homepage and listing all users
 func Home(c echo.Context) error {
 	var users []models.Users
 
@@ -25,11 +26,13 @@ func Home(c echo.Context) error {
 }
 
 // Add users function redirect
+// Render new user page
 func Add(c echo.Context) error {
 	return c.Render(http.StatusOK, "add.html", nil)
 }
 
 // Edit function for user
+// Homepage button that return the data information
 func Edit(c echo.Context) error {
 	userID, _ := strconv.Atoi(c.Param("id"))
 
@@ -56,6 +59,7 @@ func Edit(c echo.Context) error {
 }
 
 // Post is the POST function
+// Receives via ajax function the data to insert on database
 func Post(c echo.Context) error {
 	nome := c.FormValue("name")
 	email := c.FormValue("email")
@@ -81,6 +85,7 @@ func Post(c echo.Context) error {
 }
 
 // Delete users function
+// Receives via ajax function the data to delete in homepage
 func Delete(c echo.Context) error {
 	userID, _ := strconv.Atoi(c.Param("id"))
 
@@ -103,6 +108,7 @@ func Delete(c echo.Context) error {
 }
 
 // Put to edit users
+// Receives via ajax function the data to change
 func Put(c echo.Context) error {
 	userID, _ := strconv.Atoi(c.Param("id"))
 	nome := c.FormValue("name")

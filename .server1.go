@@ -6,6 +6,7 @@ import (
 	"github.com/labstack/echo"
 )
 
+//  Easy server on Go
 func main() {
 	server := echo.New()
 

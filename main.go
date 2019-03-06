@@ -7,9 +7,11 @@ import (
 	"github.com/labstack/echo/middleware"
 )
 
+// Start the routes paths
 func main() {
 	server := routers.App
 
+	// Start the render for views
 	p := pongor.GetRenderer()
 	p.Directory = "views"
 

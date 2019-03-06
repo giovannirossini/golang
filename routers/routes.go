@@ -5,17 +5,18 @@ import (
 	"github.com/labstack/echo"
 )
 
-// App variable to init Echo framework
+// App variable to use Echo framework
 var App *echo.Echo
 
+// Start server and map the routes
 func init() {
 	App = echo.New()
+	api := App.Group("/api")
 
+	// Controllers calls and paths
 	App.GET("/", controllers.Home)
 	App.GET("/add", controllers.Add)
 	App.GET("/edit/:id", controllers.Edit)
-
-	api := App.Group("/api")
 
 	api.POST("/insert", controllers.Post)
 	api.DELETE("/delete/:id", controllers.Delete)
