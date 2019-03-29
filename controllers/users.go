@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/giovannirossini/curso/models"
+	"github.com/giovannirossini/curso_web/models"
 	"github.com/labstack/echo"
 )
 

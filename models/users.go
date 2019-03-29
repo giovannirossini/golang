@@ -1,6 +1,6 @@
 package models
 
-import "github.com/giovannirossini/curso/lib"
+import "github.com/giovannirossini/curso_web/lib"
 
 // Users struct that maps database to a model
 type Users struct {

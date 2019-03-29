@@ -1,7 +1,7 @@
 package main
 
 import (
-	routers "github.com/giovannirossini/curso/routers"
+	routers "github.com/giovannirossini/curso_web/routers"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/ikeikeikeike/pongor"
 	"github.com/labstack/echo/middleware"
