@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	routers "github.com/giovannirossini/curso_web/routers"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/ikeikeikeike/pongor"
@@ -16,7 +18,7 @@ func main() {
 	p.Directory = "views"
 
 	server.Renderer = p
-
+	port := os.Getenv("PORT")
 	server.Use(middleware.Logger())
-	server.Logger.Fatal(server.Start(":3000"))
+	server.Logger.Fatal(server.Start(":" + port))
 }
