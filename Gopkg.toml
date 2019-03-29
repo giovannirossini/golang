@@ -1,3 +1,7 @@
+[metadata.heroku]
+  root-package = "github.com/giovannirossini/curso_web"
+  install = "."
+
 [[constraint]]
   name = "github.com/flosch/pongo2"
   version = "3.0.0"
