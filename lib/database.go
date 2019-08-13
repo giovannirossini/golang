@@ -2,12 +2,12 @@ package lib
 
 import (
 	"log"
-
+    "os"
 	"upper.io/db.v3"
 	"upper.io/db.v3/mysql"
 )
 
-var config = Getenv("DATABASE_URL")
+var config = os.Getenv("DATABASE_URL")
 // var config = mysql.ConnectionURL{
 // 	Host:     "us-cdbr-iron-east-03.cleardb.net",
 // 	User:     "bd51013dec5525@us-cdbr-iron-east-03.cleardb.net",
