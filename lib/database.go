@@ -8,10 +8,10 @@ import (
 )
 
 var config = mysql.ConnectionURL{
-	Host:     "localhost",
-	User:     "golang",
-	Password: "password",
-	Database: "members",
+	Host:     "us-cdbr-iron-east-03.cleardb.net",
+	User:     "bd51013dec5525",
+	Password: "d1be2d4",
+	Database: "heroku_9f89a4257664aca",
 }
 
 // Sess connection var database
