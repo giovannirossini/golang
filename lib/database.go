@@ -2,15 +2,16 @@ package lib
 
 import (
 	"log"
-
+    "os"
 	"upper.io/db.v3"
 	"upper.io/db.v3/mysql"
 )
 
+
 var config = mysql.ConnectionURL{
 	Host:     "us-cdbr-iron-east-03.cleardb.net",
 	User:     "bd51013dec5525",
-	Password: "d1be2d43",
+	Password: os.Getenv("CLEARDB_PASSWD"),
 	Database: "heroku_9f89a4257664aca",
 }
 
