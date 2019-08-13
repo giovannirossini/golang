@@ -9,7 +9,7 @@ import (
 
 var config = mysql.ConnectionURL{
 	Host:     "us-cdbr-iron-east-03.cleardb.net",
-	User:     "bd51013dec5525",
+	User:     "bd51013dec5525@us-cdbr-iron-east-03.cleardb.net",
 	Password: "d1be2d4",
 	Database: "heroku_9f89a4257664aca",
 }
