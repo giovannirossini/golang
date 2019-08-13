@@ -7,12 +7,11 @@ import (
 	"upper.io/db.v3/mysql"
 )
 
-
 var config = mysql.ConnectionURL{
-	Host:     "us-cdbr-iron-east-03.cleardb.net",
-	User:     "bd51013dec5525",
+	Host:     os.Getenv("CLEARDB_HOST"),
+	User:     os.Getenv("CLEARDB_USER"),
 	Password: os.Getenv("CLEARDB_PASSWD"),
-	Database: "heroku_9f89a4257664aca",
+	Database: os.Getenv("CLEARDB_DB"),
 }
 
 // Sess connection var database
