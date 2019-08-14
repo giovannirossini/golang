@@ -9,7 +9,7 @@ import (
 //  Easy server on Go
 func main() {
 	server := echo.New()
-    port := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
 	server.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
