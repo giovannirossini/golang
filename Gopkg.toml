@@ -1,5 +1,5 @@
 [metadata.heroku]
-  root-package = "github.com/giovannirossini/curso_web"
+  root-package = "github.com/giovannirossini/golang"
   install = "."
 
 [[constraint]]

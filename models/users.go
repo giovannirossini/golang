@@ -1,11 +1,11 @@
 package models
 
-import "github.com/giovannirossini/curso_web/lib"
+import "github.com/giovannirossini/golang/lib"
 
 // Users struct that maps database to a model
 type Users struct {
 	ID    int    `db:"id" json:"id"`
-	Nome  string `db:"name" json:"name"`
+	Name  string `db:"name" json:"name"`
 	Email string `db:"email" json:"email"`
 }
 

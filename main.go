@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	routers "github.com/giovannirossini/curso_web/routers"
+	routers "github.com/giovannirossini/golang/routers"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/ikeikeikeike/pongor"
 	"github.com/labstack/echo/middleware"

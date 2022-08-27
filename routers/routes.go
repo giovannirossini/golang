@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"github.com/giovannirossini/curso_web/controllers"
+	"github.com/giovannirossini/golang/controllers"
 	"github.com/labstack/echo"
 )
 

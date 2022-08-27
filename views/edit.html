@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %} Atualizar Usuário {% endblock%}
+{% block title %} Update User {% endblock%}
 
 {% block body %}
 
 <div class="container">
   <div class="jumbotron" style="margin-top: 200px;">
     <div class="container">
-      <h1 class="text-center">Atualizar Registro</h1>
+      <h1 class="text-center">Update User</h1>
       <!-- formulário -->
       <form class="form-horizontal" id="user-form" role="form">
         <!-- nome -->
@@ -27,7 +27,7 @@
         <!-- botão -->
         <div class="form-group">
           <div class="col-sm-10 col-sm-offset-2">
-            <button type="button" onclick="editUser('{{user.ID}}')" class="btn btn-warning btn-block">Atualizar</button>
+            <button type="button" onclick="editUser('{{user.ID}}')" class="btn btn-warning btn-block">Confirm</button>
           </div>
         </div>
       </form>

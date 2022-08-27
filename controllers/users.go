@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/giovannirossini/curso_web/models"
+	"github.com/giovannirossini/golang/models"
 	"github.com/labstack/echo"
 )
 
@@ -15,11 +15,11 @@ func Home(c echo.Context) error {
 
 	if err := models.UsersModel.Find().All(&users); err != nil {
 		return c.JSON(http.StatusBadGateway, map[string]string{
-			"mensagem": "Erro ao tentar recuperar os dados!",
+			"mensagem": "Error when trying to get data.",
 		})
 	}
 	date := map[string]interface{}{
-		"titulo": "Listagem De Usuários",
+		"titulo": "Users list",
 		"users":  users,
 	}
 	return c.Render(http.StatusOK, "index.html", date)
@@ -42,12 +42,12 @@ func Edit(c echo.Context) error {
 
 	if count, _ := result.Count(); count < 1 {
 		return c.JSON(http.StatusNotFound, map[string]string{
-			"message": "Usuário não foi encontrado!",
+			"message": "User not found.",
 		})
 	}
 	if err := result.One(&user); err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{
-			"message": "Não foi possível encontrar o usuario.",
+			"message": "User not found.",
 		})
 	}
 
@@ -72,7 +72,7 @@ func Post(c echo.Context) error {
 	if nome != "" && email != "" {
 		if _, err := models.UsersModel.Insert(user); err != nil {
 			return c.JSON(http.StatusBadRequest, map[string]string{
-				"message": "Não foi possível adicionar o registro no banco! Tente novamente.",
+				"message": "Could not add user. Try again.",
 			})
 		}
 
@@ -80,7 +80,7 @@ func Post(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusBadRequest, map[string]string{
-		"message": "Os campos precisam ser preenchidos!",
+		"message": "Fields needs to be filled.",
 	})
 }
 
@@ -93,16 +93,16 @@ func Delete(c echo.Context) error {
 
 	if count, _ := result.Count(); count < 1 {
 		return c.JSON(http.StatusNotFound, map[string]string{
-			"mensage": "Usuário não encontrado!",
+			"mensage": "User not found.",
 		})
 	}
 	if err := result.Delete(); err != nil {
 		return c.JSON(http.StatusNotFound, map[string]string{
-			"mensage": "Usuário não pôde ser deletado!",
+			"mensage": "User cannot be deleted.",
 		})
 	}
 	return c.JSON(http.StatusAccepted, map[string]string{
-		"mensage": "Usuário deletado com sucesso!",
+		"mensage": "User successfully deleted.",
 	})
 
 }
@@ -116,7 +116,7 @@ func Put(c echo.Context) error {
 
 	var user = models.Users{
 		ID:    userID,
-		Nome:  nome,
+		Name:  name,
 		Email: email,
 	}
 
@@ -124,13 +124,13 @@ func Put(c echo.Context) error {
 
 	if count, _ := result.Count(); count < 1 {
 		c.JSON(http.StatusNotFound, map[string]string{
-			"message": "Usuário não existe!",
+			"message": "User does not exist.",
 		})
 	}
 
 	if err := result.Update(user); err != nil {
 		c.JSON(http.StatusBadRequest, map[string]string{
-			"message": "Erro ao tentar atualizar o registro!",
+			"message": "Error trying to update registry.",
 		})
 	}
 
