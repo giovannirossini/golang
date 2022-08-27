@@ -61,15 +61,15 @@ func Edit(c echo.Context) error {
 // Post is the POST function
 // Receives via ajax function the data to insert on database
 func Post(c echo.Context) error {
-	nome := c.FormValue("name")
+	name := c.FormValue("name")
 	email := c.FormValue("email")
 
 	var user models.Users
 
-	user.Nome = nome
+	user.Name = name
 	user.Email = email
 
-	if nome != "" && email != "" {
+	if name != "" && email != "" {
 		if _, err := models.UsersModel.Insert(user); err != nil {
 			return c.JSON(http.StatusBadRequest, map[string]string{
 				"message": "Could not add user. Try again.",
@@ -111,7 +111,7 @@ func Delete(c echo.Context) error {
 // Receives via ajax function the data to change
 func Put(c echo.Context) error {
 	userID, _ := strconv.Atoi(c.Param("id"))
-	nome := c.FormValue("name")
+	name := c.FormValue("name")
 	email := c.FormValue("email")
 
 	var user = models.Users{
