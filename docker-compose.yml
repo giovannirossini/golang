@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  api:
+    image: golang:1.19
+    volumes:
+     - $PWD:/app
+    env_file:
+      - .env.example
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    environment:
+      - CLEARDB_USER=${MYSQL_USER}
+      - CLEARDB_PASSWD=${MYSQL_PASSWORD}
+      - CLEARDB_DB=${MYSQL_DATABASE}
+      - CLEARDB_HOST=${MYSQL_HOST}
+    ports:
+      - 80:80
+    working_dir: /app
+    command: "go run ."
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - $PWD/db:/var/lib/mysql
+    ports:
+      - 3306
+    env_file:
+      - .env.example
